@@ -71,15 +71,10 @@ class Server:
         """
         data: List[List] = self.get_page(page, page_size)
         total_pages: int = math.ceil(len(self.dataset()) / page_size)
-        if len(data) == 0:
+        if len(data) == 0 or data == []:
             page_size = 0
 
-        next_page: int
-        if page > total_pages:
-            next_page = None
-        else:
-            next_page = page + 1
-
+        next_page: int = None if page > total_pages else page + 1
         prev_page: int = page - 1 if page > 1 else None
 
         return {
