@@ -80,7 +80,7 @@ class Server:
         else:
             next_page = page + 1
 
-        prev_page: int = page - 1
+        prev_page: int = page - 1 if page > 1 else None
 
         return {
             'page_size': page_size,

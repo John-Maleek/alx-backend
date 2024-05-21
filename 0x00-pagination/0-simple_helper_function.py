@@ -19,12 +19,3 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
         start_index = end_index
         end_index += page_size
     return (start_index, end_index)
-
-
-res = index_range(1, 7)
-print(type(res))
-print(res)
-
-res = index_range(page=3, page_size=15)
-print(type(res))
-print(res)
